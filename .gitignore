@@ -6,11 +6,12 @@ bootstrap/compiled.php
 app/storage/
 
 # Laravel 5 & Lumen specific
-bootstrap/cache/
+bootstrap/cache/*
 public/storage
 .env.*.php
 .env.php
 .env
 
+database/database.sqlite*
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
