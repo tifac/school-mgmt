@@ -26,6 +26,38 @@ class CreateUsersTable extends Migration
             //Foreign Keys
             $table->foreign('role_id')->references('id')->on('roles');
         });
+
+        Schema::create('students', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamp('dob');
+            $table->string('address');
+            $table->string('parent1_contact', 10);
+            $table->string('parent2_contact', 10);
+            $table->string('home_contact');
+            $table->string('rollno', 15);
+            $table->integer('uid')->unsigned();
+            $table->timestamps();
+
+            //Foreign Keys
+            $table->foreign('uid')->references('id')->on('users');
+        });
+
+
+        Schema::create('instructors', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamp('joining_date');
+            $table->string('qualification');
+            $table->string('address');
+            $table->string('contact', 10);
+            $table->integer('uid')->unsigned();
+            $table->timestamps();
+
+            //Foreign Keys
+            $table->foreign('uid')->references('id')->on('users');
+        });        
+
     }
 
     /**
@@ -35,6 +67,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('instructors');
+        Schema::dropIfExists('students');
         Schema::dropIfExists('users');
     }
 }
