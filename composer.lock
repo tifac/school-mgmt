@@ -436,16 +436,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.30",
+            "version": "1.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "75138bb14160f3ba963750aa95e08d1d394fb198"
+                "reference": "521a233642773505222a5dd53231ccf5b0607d5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/75138bb14160f3ba963750aa95e08d1d394fb198",
-                "reference": "75138bb14160f3ba963750aa95e08d1d394fb198",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/521a233642773505222a5dd53231ccf5b0607d5a",
+                "reference": "521a233642773505222a5dd53231ccf5b0607d5a",
                 "shasum": ""
             },
             "require": {
@@ -515,7 +515,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-18 16:20:02"
+            "time": "2016-10-19 13:15:54"
         },
         {
             "name": "monolog/monolog",
