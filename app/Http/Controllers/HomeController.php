@@ -52,11 +52,34 @@ class HomeController extends Controller
             'address' => 'required',
             'parent1_contact' => 'required|digits:10',
             'parent2_contact' => 'required|digits:10',
-            'home_contact' => 'required|digits',
+            'home_contact' => 'required|digits:11',
             'bloodgroup' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
+
+        $user = \App\User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'profilepic' => '/dummy.png',
+            'role_id' => 2,
+        ]);
+
+        $student = new \App\Student();
+        $student->rollno = $request->rollno;
+        $student->dob = $request->dob;
+        $student->address = $request->address;
+        $student->parent1_contact = $request->parent1_contact;
+        $student->parent2_contact = $request->parent2_contact;
+        $student->home_contact = $request->home_contact;
+        $student->bloodgroup = $request->bloodgroup;
+        $student->uid = $user->id;
+
+        $student->save();
+
+        $request->session()->flash('status', 'Task was successful!');
+        return redirect()->route('/dashboard/student/new');
     }
 
     public function addStaff(Request $request) {
