@@ -12,7 +12,6 @@
 <th>Email id</th>
 </tr>
 </thead>
-
 @forelse ($res as $staff)
     <tr>
 	<td>{{ $staff['user']['name'] }}</td>
@@ -27,4 +26,7 @@
 @endforelse
 
 </table>
+<div id="browse_app">
+  <a class="btn btn-large btn-info" href="{{ url('/dashboard/staff/new') }}">Create New</a>
+</div>
 @endsection

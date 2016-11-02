@@ -33,5 +33,8 @@
 @endforelse
 </table>
 
+<div id="browse_app">
+  <a class="btn btn-large btn-info" href="{{ url('/dashboard/student/new') }}">Create New</a>
+</div>
 
 @endsection
