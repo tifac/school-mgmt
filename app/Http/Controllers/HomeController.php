@@ -27,11 +27,13 @@ class HomeController extends Controller
     }
 
     public function manageStudent() {
-        return view('dashboard.managestudent');
+        $res = \App\Student::with('user')->get();
+        return view('dashboard.managestudent')->with('res', $res);
     }
 
     public function manageStaff() {
-        return view('dashboard.managestaff');
+        $res = \App\Instructor::with('user')->get();
+        return view('dashboard.managestaff')->with('res', $res);
     }
 
     public function viewAddStaff() {

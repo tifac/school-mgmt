@@ -29,12 +29,12 @@ class CreateUsersTable extends Migration
 
         Schema::create('students', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->timestamp('dob');
             $table->string('address');
             $table->string('parent1_contact', 10);
             $table->string('parent2_contact', 10);
             $table->string('home_contact');
+            $table->string('bloodgroup');
             $table->string('rollno', 15);
             $table->integer('uid')->unsigned();
             $table->timestamps();
@@ -46,7 +46,6 @@ class CreateUsersTable extends Migration
 
         Schema::create('instructors', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->timestamp('joining_date');
             $table->string('qualification');
             $table->string('address');
