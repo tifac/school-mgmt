@@ -1,7 +1,7 @@
 @extends('layouts.dash')
 
 @section('content')
- <body class="dt-example">
+ 
 <table id="example" class="display" cellspacing="0" width="100%">
 <thead>
 <tr>
@@ -14,8 +14,11 @@
 </thead>
 </table>
 
+<div id="browse_app">
+  <a class="btn btn-large btn-info" href="{{ url('/dashboard/staff/new') }}">Create New</a>
+</div>
 
-</body>
+                       
  
  
 @endsection
