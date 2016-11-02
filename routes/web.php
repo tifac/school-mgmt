@@ -21,3 +21,7 @@ Route::get('/dashboard', 'HomeController@index');
 Route::get('/dashboard/student', 'HomeController@manageStudent');
 Route::get('/dashboard/staff', 'HomeController@manageStaff');
 
+Route::get('/dashboard/student/new', 'HomeController@viewAddStudent');
+Route::get('/dashboard/staff/new', 'HomeController@viewAddStaff');
+Route::post('/dashboard/student/new', 'HomeController@addStudent');
+Route::post('/dashboard/student/new', 'HomeController@addStaff');
