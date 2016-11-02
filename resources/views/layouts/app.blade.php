@@ -103,9 +103,7 @@
 
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="container">
                     @yield('content')
-                </div>
             </div>
         </div>
     </div>

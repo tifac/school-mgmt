@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function manageStudent() {
+        return view('dashboard.managestudent');
+    }
+
+    public function manageStaff() {
+        return view('dashboard.managestaff');
+    }    
 }
