@@ -87,8 +87,7 @@ class HomeController extends Controller
 
         $student->save();
 
-        $request->session()->flash('status', 'Task was successful!');
-        return redirect()->route('/dashboard/student/new');
+        return view('dashboard.editstudent')->with('status', 'succcess');
     }
 
     public function addStaff(Request $request) {
@@ -101,5 +100,23 @@ class HomeController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required',
         ]);
+
+        $user = new \App\User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->profilepic = "placeholder.png";
+        $user->role_id = 2;
+        $user->save();
+
+        $instructor = new \App\Instructor();
+        $instructor->joining_date = $request->joining_date;
+        $instructor->qualification = $request->qualification;
+        $instructor->address = $request->address;
+        $instructor->contact = $request->contact;
+        $instructor->uid = $user->id;
+        $instructor->save();
+
+        return view('dashboard.editstaff')->with('status', 'succcess');
     }
 }
