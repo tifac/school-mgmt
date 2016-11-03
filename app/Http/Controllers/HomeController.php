@@ -119,4 +119,21 @@ class HomeController extends Controller
 
         return view('dashboard.editstaff')->with('status', 'succcess');
     }
+
+    public function addCourse(Request $request) {
+        $this->validate($request, [
+            'course_name' => 'required|max:255',
+            'course_code' => 'required|alpha_num|unique:courses',
+            'credits' => 'required|numeric|min:0|max:20',
+            
+        ]);
+
+        $course = new \App\Course();
+        $course->course_name = $request->course_name;
+        $course->course_code = strtoupper($request->course_code);
+        $course->credits = $request->credits;
+        $course->save();
+
+        return view('dashboard.addcourse')->with('status', 'succcess');   
+    }
 }
