@@ -36,6 +36,15 @@ class HomeController extends Controller
         return view('dashboard.managestaff')->with('res', $res);
     }
 
+    public function manageCourse() {
+        $res = \App\Course::all();
+        return view('dashboard.managecourse')->with('res', $res);
+    }
+
+    public function viewAddCourse() {
+        $res = \App\Course::all();
+        return view('dashboard.addcourse')->with('res', $res);
+    }
     public function viewAddStaff() {
         return view('dashboard.editstaff');
     }
