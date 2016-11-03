@@ -12,4 +12,9 @@ class Instructor extends Model
     {
     	return $this->hasOne('App\User', 'id', 'uid');
     }
+
+    public function courses()
+    {
+    	return $this->belongsToMany('App\Course')->withTimestamps();
+    }
 }
