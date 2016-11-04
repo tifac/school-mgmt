@@ -30,4 +30,8 @@ Route::get('/dashboard/student/new', 'HomeController@viewAddStudent');
 Route::get('/dashboard/staff/new', 'HomeController@viewAddStaff');
 Route::post('/dashboard/student/new', 'HomeController@addStudent');
 Route::post('/dashboard/staff/new', 'HomeController@addStaff');
+
+//assign-instructor
+Route::get('/dashboard/staff/assign','HomeController@viewAssignInstructor');
+
 Route::post('/dashboard/course/new', 'HomeController@addCourse');
