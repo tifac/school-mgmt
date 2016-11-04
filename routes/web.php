@@ -35,3 +35,6 @@ Route::post('/dashboard/staff/new', 'HomeController@addStaff');
 Route::get('/dashboard/staff/assign','HomeController@viewAssignInstructor');
 
 Route::post('/dashboard/course/new', 'HomeController@addCourse');
+
+//profile picture update
+Route::get('/profile/pic', 'ProfileController@profilePic');
