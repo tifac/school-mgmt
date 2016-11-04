@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/dashboard', 'HomeController@index');
 Route::get('/dashboard/student', 'HomeController@manageStudent');
 Route::get('/dashboard/staff', 'HomeController@manageStaff');
+Route::get('/dashboard/course', 'HomeController@manageCourse');
+Route::get('/dashboard/course/new', 'HomeController@viewAddCourse');
 
 Route::get('/dashboard/student/new', 'HomeController@viewAddStudent');
 Route::get('/dashboard/staff/new', 'HomeController@viewAddStaff');
@@ -28,3 +30,5 @@ Route::post('/dashboard/staff/new', 'HomeController@addStaff');
 
 //assign-instructor
 Route::get('/dashboard/staff/assign','HomeController@viewAssignInstructor');
+
+Route::post('/dashboard/course/new', 'HomeController@addCourse');

@@ -12,7 +12,9 @@
                     <li>
                         <a href="{{ url('/dashboard/student') }}"><i class="fa fa-fw fa-bar-chart-o"></i>Manage Student</a>
                     </li>
-					
+					<li>
+                        <a href="{{ url('/dashboard/course') }}"><i class="fa fa-fw fa-bar-chart-o"></i>Manage Course</a>
+                    </li>
                 </ul>
             </div>
 @endsection
