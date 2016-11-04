@@ -54,6 +54,10 @@ class HomeController extends Controller
     }
     
     public function viewAssignInstructor() {
+
+        $instructors_names = \App\Instructor::with('user')->get();
+        $course_names = \App\Course::with('user')->get();
+
         return view('dashboard.assigninstructor');
     }
 
@@ -144,7 +148,7 @@ class HomeController extends Controller
 
         return view('dashboard.addcourse')->with('status', 'succcess');   
     }
-    public function courseRegistration(Request $request) {
+    public function assignInstructor(Request $request) {
         $this->validate($request, [
             'course_name' => 'required|max:255',
             'instructors_name' => 'required|max:255',
@@ -158,6 +162,6 @@ class HomeController extends Controller
         $instructor->instructors_name = $request->instructors_name;
         $instructor->save();
 
-        return view('dashboard.course_registration')->with('status', 'succcess');
+        return view('dashboard.courseregistration')->with('status', 'succcess');
     }
 }
