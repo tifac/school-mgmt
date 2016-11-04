@@ -43,6 +43,14 @@ class HomeController extends Controller
     public function viewAddStudent() {
         return view('dashboard.editstudent');
     }
+    
+    public function viewAssignInstructor() {
+        return view('dashboard.assigninstructor');
+    }
+
+    public function viewCourseRegistration() {
+        return view('dashboard.courseregistration');
+    }
 
     public function addStudent(Request $request) {
         $this->validate($request, [

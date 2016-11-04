@@ -25,7 +25,7 @@
 
         <h3>Add new staff</h3>
         
-        <form class="form-horizontal" role="form" method="post" action="{{ url('/dashboard/staff/new') }}">
+        <form class="form-horizontal" role="form" method="post" action="{{ url('/dashboard/staff/assign') }}">
 
           <div class="form-group">
             <label class="col-lg-3 control-label">Name:</label>
