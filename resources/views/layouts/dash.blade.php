@@ -15,6 +15,9 @@
 					<li>
                         <a href="{{ url('/dashboard/course') }}"><i class="fa fa-fw fa-bar-chart-o"></i>Manage Course</a>
                     </li>
+                    <li>
+                        <a href="{{ url('/dashboard/course') }}"><i class="fa fa-fw fa-bar-chart-o"></i>Course Registration</a>
+                    </li>
                 </ul>
             </div>
 @endsection

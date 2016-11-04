@@ -136,4 +136,20 @@ class HomeController extends Controller
 
         return view('dashboard.addcourse')->with('status', 'succcess');   
     }
+    public function courseRegistration(Request $request) {
+        $this->validate($request, [
+            'course_name' => 'required|max:255',
+            'instructors_name' => 'required|max:255',
+        ]);
+
+        $courseregistration = new \App\Course();
+        $courseregistration->course_name = $request->course_name;
+        $user->save();
+
+        $instructor = new \App\Instructor();
+        $instructor->instructors_name = $request->instructors_name;
+        $instructor->save();
+
+        return view('dashboard.course_registration')->with('status', 'succcess');
+    }
 }
